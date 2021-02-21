@@ -16,8 +16,12 @@ public class UserDAOImpl implements UserDAO {
 	}
 
 	@Override
-	public void createUser(int key, User u) {
-		UserFakeDB.userDB.put(key, u);
+	public void createUser(User u) {
+		if(UserFakeDB.userDB.containsKey((int)Math.random()*5 + 10)) {
+			UserFakeDB.userDB.replace((int)Math.random()*5 + 10, u);
+		}
+		else
+			UserFakeDB.userDB.put((int)Math.random()*5 + 10, u);
 		
 	}
 

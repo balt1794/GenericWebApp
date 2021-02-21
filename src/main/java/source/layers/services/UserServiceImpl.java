@@ -3,31 +3,33 @@ package source.layers.services;
 import java.util.List;
 
 import source.layers.models.User;
+import source.layers.repositories.UserDAOImpl;
 
 public class UserServiceImpl implements UserService {
+
+	UserDAOImpl user = new UserDAOImpl();
 	
-	@Override
-	public boolean login(String username, String password) {
-		// TODO Auto-generated method stub
-		return false;
-	}
+
 
 	@Override
 	public User getUser(int u_id) {
-		// TODO Auto-generated method stub
-		return null;
+		return user.getUser(u_id);
 	}
 
 	@Override
-	public void registerUser(int key, User u) {
-		// TODO Auto-generated method stub
-		
+	public void createUser(User u) {
+		user.createUser(u);
+
 	}
 
 	@Override
 	public List<User> getAllUsers() {
-		// TODO Auto-generated method stub
-		return null;
+		return user.getAllUsers();
+	}
+	
+	@Override
+	public boolean login(String username, String password) {
+		return false;
 	}
 
 }

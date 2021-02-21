@@ -19,7 +19,7 @@ public interface UserService {
 	User getUser(int u_id);
 	
 	//insert user
-	void registerUser(int key, User u);
+	void createUser(User u);
 	
 	//select * users
 	List<User> getAllUsers();

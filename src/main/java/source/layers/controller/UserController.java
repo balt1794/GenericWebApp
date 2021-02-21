@@ -10,6 +10,7 @@ import com.google.gson.Gson;
 
 import source.layers.models.User;
 import source.layers.services.UserServiceImpl;
+import source.layers.util.UserFakeDB;
 
 
 public class UserController {  
@@ -57,7 +58,9 @@ public class UserController {
 	//User Registration 
 	public static void userRegistration(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		User u = gson.fromJson(request.getReader(), User.class);
-		userService.registerUser((int)Math.random()*5 + 10, u);
+		userService.createUser(u);
+		response.getWriter().print("Registered");
+		System.out.println(UserFakeDB.userDB.entrySet());
 	}
 
 

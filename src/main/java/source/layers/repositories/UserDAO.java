@@ -19,7 +19,7 @@ public interface UserDAO {
 	User getUser(int u_id);
 	
 	//create a new user
-	void createUser(int key, User u);
+	void createUser(User u);
 	
 	//update user
 	boolean updateUser(int key, User u);

@@ -17,9 +17,15 @@ public class RequestHelper {
 
 		// Different landing pages for the URI
 		switch (uri) {
-
-		case "/Project/---.do": {
+		//user Loging
+		case "/Project/---.js": {
 			UserController.login(request, response);
+			break;
+		}
+		//User Registration
+		case "/GeneralWebApp/userRegistration.js":{
+			System.out.println("Got into use registration -> UserController");
+			UserController.userRegistration(request, response);
 			break;
 		}
 		default: {
